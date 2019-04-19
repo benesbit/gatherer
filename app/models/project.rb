@@ -1,10 +1,10 @@
 # project.rb
 
-class Project
-  attr_accessor :tasks, :due_date
+class Project < ApplicationRecord
+  has_many :tasks, dependent: :destroy
 
-  def initialize
-    @tasks = []
+  def self.velocity_length_in_days
+    21
   end
 
   def imcomplete_tasks
@@ -25,10 +25,6 @@ class Project
 
   def completed_velocity
     tasks.sum(&:points_towards_velocity)
-  end
-
-  def self.velocity_length_in_days
-    21
   end
 
   def current_rate
