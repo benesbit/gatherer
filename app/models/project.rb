@@ -7,12 +7,12 @@ class Project < ApplicationRecord
     21
   end
 
-  def imcomplete_tasks
+  def incomplete_tasks
     tasks.reject(&:complete?)
   end
 
   def done?
-    imcomplete_tasks.empty?
+    incomplete_tasks.empty?
   end
 
   def total_size
@@ -20,11 +20,11 @@ class Project < ApplicationRecord
   end
 
   def remaining_size
-    imcomplete_tasks.sum(&:size)
+    incomplete_tasks.sum(&:size)
   end
 
   def completed_velocity
-    tasks.sum(&:points_towards_velocity)
+    tasks.sum(&:points_toward_velocity)
   end
 
   def current_rate

@@ -4,7 +4,7 @@ class Task < ApplicationRecord
   belongs_to :project
 
   def mark_completed(date = Time.current)
-    @completed_at = date
+    self.completed_at = date
   end
 
   def complete?
@@ -16,7 +16,7 @@ class Task < ApplicationRecord
     completed_at > Project.velocity_length_in_days.days.ago
   end
 
-  def points_towards_velocity
+  def points_toward_velocity
     part_of_velocity? ? size : 0
   end
 end
