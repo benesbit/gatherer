@@ -1,6 +1,7 @@
 # project.rb
 
 class Project < ApplicationRecord
+  validates :name, presence: true
   has_many :tasks, dependent: :destroy
 
   def self.velocity_length_in_days
