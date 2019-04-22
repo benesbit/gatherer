@@ -11,7 +11,7 @@ RSpec.describe "adding a project", type: :system do
     expect(page).to have_content(8)
   end
 
-  it "bends steel in its bare hands", :pending do #:skip do
-    # anything
-  end
+  # it "bends steel in its bare hands", :pending do #:skip do
+  #   # anything
+  # end
 end
