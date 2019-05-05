@@ -3,6 +3,7 @@
 require "rails_helper"
 
 RSpec.describe Task do
+  it_should_behave_like "sizeable"
   let(:task) { Task.new }
 
   it "does not have a new task as complete" do
