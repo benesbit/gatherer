@@ -32,11 +32,14 @@ RSpec.describe Project do
 end
 
 describe "estimates" do
-  let(:project) { Project.new }
-  let(:newly_done) { Task.new(size: 3, completed_at: 1.day.ago) }
-  let(:old_done) { Task.new(size: 2, completed_at: 6.months.ago) }
-  let(:small_not_done) { Task.new(size: 1) }
-  let(:large_not_done) { Task.new(size: 4) }
+  let(:project) { FactoryBot.build_stubbed(:project,
+    tasks: [newly_done, old_done, small_not_done, large_not_done]) }
+  let(:newly_done) { FactoryBot.build_stubbed(:task,
+    size: 3, completed_at: 1.day.ago) }
+  let(:old_done) { FactoryBot.build_stubbed(:task,
+    size: 2, completed_at: 6.months.ago) }
+  let(:small_not_done) { FactoryBot.build_stubbed(:task, size: 1) }
+  let(:large_not_done) { FactoryBot.build_stubbed(:task, size: 4) }
 
   before(:example) do
     project.tasks = [newly_done, old_done, small_not_done, large_not_done]
