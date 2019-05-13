@@ -41,10 +41,6 @@ describe "estimates" do
   let(:small_not_done) { FactoryBot.build_stubbed(:task, size: 1) }
   let(:large_not_done) { FactoryBot.build_stubbed(:task, size: 4) }
 
-  before(:example) do
-    project.tasks = [newly_done, old_done, small_not_done, large_not_done]
-  end
-
   it "can calculate total size" do
     expect(project).to be_of_size(10)
     expect(project).not_to be_of_size(5)
