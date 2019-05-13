@@ -42,7 +42,5 @@ FactoryBot.define do
       large
       soon
     end
-    # factory :trivial, class: Task, traits: %i[small later]
-    # factory :panic, class: Task, traits: %i[large soon]
   end
 end
