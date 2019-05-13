@@ -57,7 +57,7 @@ describe "estimates" do
   end
 
   it "knows its projected days remaining" do
-    expect(project.projected_days_remaining).to eq(35)
+    expect(project.projected_days_remaining).to eq(42)
   end
 
   it "knows if it is not on schedule" do
