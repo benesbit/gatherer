@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :project do
     name "Project Runway"
-    due_date 1.week.from.now
+    # due_date 1.week.from.now
+    due_date { Date.today - rand(50) }
   end
 
   factory :big_project, class: Project do
