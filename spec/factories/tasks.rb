@@ -10,11 +10,11 @@ FactoryBot.define do
     completed_at { nil }
 
     trait :small do
-      size 1
+      size { 1 }
     end
 
     trait :large do
-      size 5
+      size { 5 }
     end
 
     trait :soon do
@@ -34,13 +34,13 @@ FactoryBot.define do
     end
 
     factory :trivial do
-      small
-      later
+        small
+        later
     end
 
     factory :panic do
-      large
-      soon
+        large
+        soon
     end
   end
 end
